@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  .def{
+    float: left;
+    list-style: none;
+    color: blue;
+    font-weight: bold;
+  }
+  .gh{
+    color: red;
+    margin-top: 10px;
+  }
+</style>
+<body>
+  <ul class="abc">
+    <li>子代1
+      <ul>
+        <li>孙子1</li>
+        <li>孙子2</li>
+        <li>孙子3</li>
+      </ul>
+    </li>
+    <li>子代2
+      <ul>
+        <li>孙子1</li>
+        <li>孙子2</li>
+        <li>孙子3</li>
+      </ul>
+    </li>
+    <li>子代3</li>
+  </ul>
+  <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+  <script type="text/javascript">
+     $(function(){
+      $(".abc>li").addClass('def');
+      $(".abc li:not(.def)").addClass('gh');
+     })
+  </script>
+</body>
+</html>

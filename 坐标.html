@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    div{
+      width: 400px;
+      height: 200px;
+      border: 1px solid red;
+    }
+    p{
+      width: 70px;
+      height: 20px;
+      background-color: lime;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"><a id="th" href="#">想看我吗?</a></div>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#th").mouseout(function(event) {
+        $(".txt").remove();
+      }).mousemove(function(e) {
+        var qq="<p class='txt'>你被骗了</p>";
+        $("body").append(qq);
+        $(".txt").css({"top":e.pageY+'px',"left":e.pageX+'px'});
+      });
+    })
+  </script>
+</body>
+</html>

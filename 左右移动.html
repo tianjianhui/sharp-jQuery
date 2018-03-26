@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    .wrap{
+      margin: 0 auto;
+      width: 400px;
+      height: 200px;
+      border: 2px solid green;
+    }
+    .wrap div select{
+      width: 100px;
+      height: 180px;
+      background-color: silver;
+      border: 1px solid red;
+    }
+    .btn{
+      width: 60px;
+      height: 30px;
+      background-color: blue;
+      color: white;
+    }
+    .box1{
+      float: left;
+    }
+    .box2{
+      float: right;
+    }
+    .box3{
+      float: left;
+      margin-left: 70px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="box1">
+    <select id="select1" multiple>
+      <option value="1">选项一</option>
+      <option value="2">选项二</option>
+      <option value="3">选项三</option>
+      <option value="5">选项四</option>
+      <option value="6">选项五</option>
+      <option value="7">选项六</option>
+    </select>
+  </div>
+  <div class="box3">
+    <input class="btn" id="add" type="button" name="btn1" value="添加>|"><br>
+    <input class="btn" id="add_all" type="button" name="btn2" value="全添>>"><br>
+    <input class="btn" id="remove_all" type="button" name="btn3" value="全删<<"><br>
+    <input class="btn" id="remove" type="button" name="btn4" value="删除|<">
+  </div>
+  <div class="box2">
+    <select multiple id="select2"></select>
+  </div>
+</div>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $("#add").click(function(event) {
+      var ad = $("#select1 option:selected");
+      ad.appendTo('#select2');
+    });
+    $("#add_all").click(function(event) {
+      var ad1 = $("#select1 option");
+      ad1.appendTo('#select2');
+    });
+    $("#select1").dblclick(function(event) {
+      $("option:selected",this).appendTo('#select2');
+    });
+    $("#select2").dblclick(function(event) {
+      $("option:selected",this).appendTo('#select1');
+    });
+    $("#remove_all").click(function(event) {
+      $("#select2 option").appendTo('#select1');
+    });
+    $("#remove").click(function(event) {
+      $("#select2 option:selected").appendTo('#select1')
+    });
+  </script>
+</body>
+</html>

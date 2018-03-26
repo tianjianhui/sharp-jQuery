@@ -1,0 +1,7 @@
+ul li{
+  background-color: hotpink;
+}
+.wrap{
+  background: url("image/3.jpg");
+  background-size: cover;
+}

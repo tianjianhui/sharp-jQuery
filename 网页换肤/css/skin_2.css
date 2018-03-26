@@ -1,0 +1,7 @@
+ul li{
+  background-color: lime;
+}
+.wrap{
+  background: url("image/2.jpg");
+  background-size: cover;
+}

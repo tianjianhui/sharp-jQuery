@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    span{
+      background-color: blue;
+      border: 1px ridge silver;
+      color: white;
+      cursor: pointer;
+    }
+   #box{
+    width: 500px;
+    height: 500px;
+    background-color: #333;
+   }
+   ul li{
+    list-style-type: none;
+    background-color: aqua;
+    margin: 5px;
+    color: silver;
+   }
+  </style>
+</head>
+<body>
+<span id="dj">点我有惊喜</span>
+<div id="box"></div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $("#dj").click(function() {
+      $("#box").load("load1.html");
+    });
+  })
+</script>
+</body>
+</html>

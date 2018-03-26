@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul li{
+      float: left;
+      list-style-type: none;
+      cursor: pointer;
+      margin: 10px;
+      border: 2px ridge silver;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: white; 
+      font-weight: bolder;
+    }
+    .wrap{
+      width: 100%;
+      height: 800px;
+    }
+    .selected{
+      opacity: 0.5;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="css/skin_1.css" id="cssfile">
+</head>
+<body>
+  <div class="wrap">
+    <ul>
+      <li id="skin_1" class="selected">皮肤一</li>
+      <li id="skin_2">皮肤二</li>
+      <li id="skin_3">皮肤三</li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.cookie.js"></script>
+  <script type="text/javascript">
+  // 换肤函数
+    function switchskin(skinname){
+      $("#"+skinname).addClass("selected").siblings().removeClass("selected");
+      $("#cssfile").attr('href', 'css/'+skinname+'.css');
+      $.cookie("mycssSkin",skinname,{path:'/',expires:10});//所换皮肤存在cookin中
+    }
+
+    $(function(){
+      $(".wrap li").click(function() {
+        switchskin(this.id);
+      });
+        var cook_skin=$.cookie("mycssSkin");
+        if (cook_skin){
+          switchskin(cook_skin);
+        }
+    })
+  </script>
+</body>
+</html>

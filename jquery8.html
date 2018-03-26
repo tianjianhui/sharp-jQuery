@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+  <div><a href="#">点我</a></div>
+
+  <script type="text/javascript">
+    $(function(){
+      $("a").click(function(event) {
+      alert(event.target);
+      return false;
+    });
+    })
+  </script>
+</body>
+</html>
